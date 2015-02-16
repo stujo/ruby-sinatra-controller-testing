@@ -40,6 +40,15 @@
   <div class="large-9 columns" role="content">
    
 
+
+  <% if flash.has?(:notice) %>
+    <div data-alert class="alert-box success radius">
+      <%= flash[:notice] %>
+    </div>
+
+  <% end %>
+
+
     <%= yield %>
 
 

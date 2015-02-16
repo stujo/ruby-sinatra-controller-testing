@@ -1,1 +1,18 @@
-<h1>INDEX</h1>
+<% if auth_authenticated? %>
+
+<h1>Secret Items</h1>
+<ul>
+  <li><%= fake_sentance %></li>
+  <li><%= fake_sentance %></li>
+  <li><%= fake_sentance %></li>
+  <li><%= fake_sentance %></li>
+  <li><%= fake_sentance %></li>
+</ul>
+
+<% else %>
+
+<p>This is public info :)</p>
+
+<p>You must log in to see the private stuff</p>
+
+<% end %> 

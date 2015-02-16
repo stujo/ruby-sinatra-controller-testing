@@ -3,6 +3,7 @@ require 'rack/test'
 require 'webmock/rspec'
 require 'rspec-html-matchers'
 require 'database_cleaner'
+require 'capybara/rspec'
 
 ENV['RACK_ENV'] = 'test'
 
@@ -20,6 +21,8 @@ RSpec.configure do |config|
   def app
     Sinatra::Application
   end
+
+  Capybara.app = app
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)

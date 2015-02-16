@@ -1,7 +1,12 @@
 helpers do
 
   def auth_login_user hash
-    p hash
+    user = User.find_by_email(hash[:email])  
+    if user
+      session[:auth_user_id]= user.id
+    else
+      session.delete :auth_user_id
+    end  
   end  
 
   def auth_authenticated?
@@ -26,11 +31,13 @@ helpers do
   end
 
   def auth_do_login_redirect!
+    flash[:notice] = "Welcome back!"
     redirect session[:auth_login_redirect_url] unless session[:auth_login_redirect_url].blank?
     redirect '/'
   end
 
   def auth_do_logout_redirect!
+    flash[:notice] = "You signed out!"
     redirect '/'
   end
 

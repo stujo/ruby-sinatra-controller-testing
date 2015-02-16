@@ -23,10 +23,11 @@ gem 'rake'
 gem 'dotenv'
 gem 'rack-flash3'
 
+gem 'faker'
+
 group :development, :test do
   gem 'rspec-html-matchers'
   gem 'webmock'
-  gem 'faker'
   gem 'rspec', '~>3.1'
   gem 'rack-test'
   gem 'capybara'

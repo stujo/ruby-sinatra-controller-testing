@@ -16,15 +16,6 @@ ActiveRecord::Schema.define(version: 20150127212338) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "notes", force: :cascade do |t|
-    t.boolean  "complete"
-    t.text     "content"
-    t.string   "github_username"
-    t.string   "github_repo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email"
   end
