@@ -4,7 +4,7 @@ feature 'Unauthenticated user can login from home page' do
 
   let!(:user){ User.create!(:email => 'foo@example.com') }
 
-  scenario 'they see welcome text' do
+  scenario 'they see the secret times after login' do
     visit '/'
 
     click_link 'Login', match: :first
