@@ -25,7 +25,16 @@
 * Capybara
   * ``require 'capybara/rspec'``
   * [jnicklas/capybara](https://github.com/jnicklas/capybara)
-  *   
+
+# Review
+* RSpec config
+* Rack::Test
+* let and let!
+* FactoryGirl
+* DatabaseCleaner
+* HtmlMatchers
+* Session Data
+* Capybara
  
 
 
