@@ -26,6 +26,7 @@ gem 'rack-flash3'
 gem 'faker'
 
 group :development, :test do
+  gem 'factory_girl'
   gem 'rspec-html-matchers'
   gem 'webmock'
   gem 'rspec', '~>3.1'

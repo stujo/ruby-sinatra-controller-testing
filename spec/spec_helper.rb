@@ -1,6 +1,7 @@
 require 'rspec'
 require 'rack/test'
 require 'webmock/rspec'
+require 'factory_girl'
 require 'rspec-html-matchers'
 require 'database_cleaner'
 require 'capybara/rspec'
@@ -10,6 +11,9 @@ ENV['RACK_ENV'] = 'test'
 require_relative '../app'
 
 WebMock.disable_net_connect!(allow_localhost: true)
+
+FactoryGirl.definition_file_paths = %w{./spec/factories}
+FactoryGirl.find_definitions
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
@@ -25,6 +29,7 @@ RSpec.configure do |config|
   Capybara.app = app
 
   config.before(:suite) do
+    FactoryGirl.lint
     DatabaseCleaner.clean_with(:truncation)
   end
 
